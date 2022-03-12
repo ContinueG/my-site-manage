@@ -1,0 +1,18 @@
+import request from "@/utils/request"
+export function getComment(page = 1, limit = 10) {
+    return request({
+        url: "/api/comment",
+        method: "get",
+        query: {
+            page,
+            limit,
+        }
+    })
+}
+
+export function deleteComment(id) {
+    return request({
+        url: `/api/comment/${id}`,
+        method: "delete",
+    })
+}
